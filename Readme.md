@@ -1,3 +1,5 @@
+<img width="500" height="500" alt="clickdesk-logo" src="https://github.com/user-attachments/assets/00a3687d-736f-41e4-be90-d0a09eed3c94" />
+
 # Click-Desk
 
 > **Status:** Em andamento ⏳  
