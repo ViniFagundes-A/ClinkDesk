@@ -121,42 +121,17 @@ Uma história está **CONCLUÍDA** quando cumpre **todos** os itens:
 
 ## Tecnologias
 
-<p align="left">
-  <!-- Frontend -->
-  <img alt="React" src="https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB">
-  <img alt="Next.js" src="https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white">
-  <img alt="TailwindCSS" src="https://img.shields.io/badge/Tailwind-06B6D4?logo=tailwindcss&logoColor=white">
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white">
-</p>
-
-<p align="left">
-  <!-- Backend -->
-  <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white">
-  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white">
-  <img alt="Swagger" src="https://img.shields.io/badge/OpenAPI%2FSwagger-85EA2D?logo=swagger&logoColor=black">
-  <img alt="JWT" src="https://img.shields.io/badge/JWT-000000?logo=jsonwebtokens&logoColor=white">
-</p>
-
-<p align="left">
-  <!-- Dados e Infra -->
+<p align="center">
+  <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white">
+  <img alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white">
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black">
   <img alt="SQL Server" src="https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white">
-  <img alt="Redis" src="https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white">
-  <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white">
-  <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=white">
-  <img alt="Prometheus" src="https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=white">
-  <img alt="Grafana" src="https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white">
-</p>
-
-<p align="left">
-  <!-- Colaboração -->
-  <img alt="Jira" src="https://img.shields.io/badge/Jira-0052CC?logo=jira&logoColor=white">
-  <img alt="Miro" src="https://img.shields.io/badge/Miro-050038?logo=miro&logoColor=F2C50A">
-  <img alt="GitHub" src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white">
+  <img alt="Kanban" src="https://img.shields.io/badge/Kanban-2E7D32">
   <img alt="Figma" src="https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white">
+  <img alt="UML" src="https://img.shields.io/badge/UML-6E4C13">
+  <img alt="Git" src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white">
 </p>
 
-> **Links de referência:**  
-> - Frontend: [Repo Frontend]() • Backend: [Repo Backend]() • API: [Swagger/OpenAPI]() • CI/CD: [Pipelines]()
 
 
 
