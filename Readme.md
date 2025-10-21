@@ -121,37 +121,43 @@ Uma história está **CONCLUÍDA** quando cumpre **todos** os itens:
 
 ## Tecnologias
 
-- **Frontend (Web):** React + Next.js  
-  _Opcional:_ Tailwind CSS, Zustand/Redux, Axios/React Query  
-  _Mobile (roadmap):_ React Native  
-  _Desktop (roadmap):_ Electron
+<p align="left">
+  <!-- Frontend -->
+  <img alt="React" src="https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB">
+  <img alt="Next.js" src="https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white">
+  <img alt="TailwindCSS" src="https://img.shields.io/badge/Tailwind-06B6D4?logo=tailwindcss&logoColor=white">
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white">
+</p>
 
-- **Backend (API):** Python + FastAPI  
-  _Extras:_ Pydantic, Uvicorn/Gunicorn, SQLAlchemy, Alembic (migrações)  
-  _Docs:_ OpenAPI/Swagger (auto)
+<p align="left">
+  <!-- Backend -->
+  <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white">
+  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white">
+  <img alt="Swagger" src="https://img.shields.io/badge/OpenAPI%2FSwagger-85EA2D?logo=swagger&logoColor=black">
+  <img alt="JWT" src="https://img.shields.io/badge/JWT-000000?logo=jsonwebtokens&logoColor=white">
+</p>
 
-- **Banco de Dados:** Microsoft SQL Server  
-  _Suporte:_ Migrations (Alembic), índices/views para métricas
+<p align="left">
+  <!-- Dados e Infra -->
+  <img alt="SQL Server" src="https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white">
+  <img alt="Redis" src="https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white">
+  <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white">
+  <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=white">
+  <img alt="Prometheus" src="https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=white">
+  <img alt="Grafana" src="https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white">
+</p>
 
-- **Cache & Filas (opcional):** Redis (cache, rate limiting, sessões), RQ/Celery (jobs)  
-  _Alternativa Node:_ BullMQ (se usar Node)
+<p align="left">
+  <!-- Colaboração -->
+  <img alt="Jira" src="https://img.shields.io/badge/Jira-0052CC?logo=jira&logoColor=white">
+  <img alt="Miro" src="https://img.shields.io/badge/Miro-050038?logo=miro&logoColor=F2C50A">
+  <img alt="GitHub" src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white">
+  <img alt="Figma" src="https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white">
+</p>
 
-- **Autenticação & Segurança:** JWT (access/refresh), RBAC (perfis), CORS, .env/Secrets
+> **Links de referência:**  
+> - Frontend: [Repo Frontend]() • Backend: [Repo Backend]() • API: [Swagger/OpenAPI]() • CI/CD: [Pipelines]()
 
-- **Observabilidade:** Logs estruturados, métricas (Prometheus), dashboards (Grafana)
-
-- **Integrações:** SMTP/IMAP (e-mail), Webhooks, API pública (tokens)
-
-- **Qualidade & Testes:** Pytest (unit/integração), Coverage, Lint/Format (ruff/black)
-
-- **DevOps:** Docker + Docker Compose, GitHub Actions (CI/CD), versionamento semântico  
-  _Ambientes:_ Dev / Homolog / Prod
-
-> Links para referências (adicione depois):  
-> - Frontend: [Repo Frontend]()  
-> - Backend: [Repo Backend]()  
-> - Docs/API: [Swagger/OpenAPI]()  
-> - Infra/DevOps: [Pipelines CI/CD]()  
 
 
 ## Manual de Instalação
