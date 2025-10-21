@@ -53,49 +53,115 @@ Este repositório é um **meta-repo** que agrega os serviços via **submódulos*
 > (Opcional) Diagramas, decisões e ADRs em `./docs/`.
 
 ## Backlog do Produto
-| ID    | História                                                                 | Critérios de Aceite (BDD)                                                                                                                                                                | Prioridade | Sprint |
-|-------|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|--------|
-| US-01 | Como **cliente**, quero **abrir um chamado** para **obter suporte**      | **Dado** que estou autenticado **Quando** envio um formulário válido **Então** o ticket é criado com nº de protocolo, status **Novo** e registro no histórico                            | Alta      | S1     |
-| US-02 | Como **cliente**, quero **listar e filtrar meus chamados**               | **Dado** que tenho tickets **Quando** acesso “Meus Chamados” **Então** vejo lista paginada, filtros por status/prioridade e posso abrir o detalhe                                         | Alta      | S1     |
-| US-03 | Como **agente**, quero **entrar no sistema** para **atender tickets**    | **Dado** credenciais válidas **Quando** faço login **Então** acesso o painel do agente; **E** com inválidas recebo erro e não acesso                                                     | Alta      | S1     |
-| US-04 | Como **agente**, quero **alterar status** para **controlar o fluxo**     | **Dado** um ticket **Quando** mudo de Novo→Em atendimento→Pendente→Resolvido **Então** a mudança é auditada no histórico e visível para cliente                                          | Alta      | S1     |
-| US-05 | Como **agente**, quero **comentar e anexar arquivos** ao ticket          | **Dado** um ticket **Quando** adiciono comentário/anexo válido **Então** o item aparece na timeline; **E** com tipo/tamanho inválido recebo validação                                    | Alta      | S1     |
-| US-06 | Como **gestor**, quero **definir políticas de SLA**                      | **Dado** filas/categorias **Quando** configuro tempos de 1ª resposta e resolução **Então** os prazos passam a ser aplicados a novos tickets                                              | Alta      | S2     |
-| US-07 | Como **sistema**, quero **monitorar SLA e notificar violações**          | **Dado** um ticket com SLA **Quando** estiver a X min de violar **Então** enviar alerta ao agente e marcar como “Em risco”; **E** se violar, registrar ocorrência                        | Alta      | S2     |
-| US-08 | Como **cliente**, quero **avaliar o atendimento (CSAT)**                 | **Dado** ticket Resolvido **Quando** recebo convite de avaliação **Então** posso dar nota/comentário; **E** o resultado fica salvo para relatórios                                       | Média     | S2     |
-| US-09 | Como **agente**, quero **classificação automática (IA) de prioridade**   | **Dado** a descrição do ticket **Quando** criar/atualizar **Então** o sistema sugere prioridade/categoria; **E** posso aceitar/ajustar e isso é registrado                               | Média     | S2     |
-| US-10 | Como **agente**, quero **pesquisar Base de Conhecimento**                 | **Dado** uma dúvida recorrente **Quando** pesquiso por termos **Então** recebo artigos relevantes; **E** consigo vincular artigo ao ticket                                               | Média     | S3     |
-| US-11 | Como **gestor**, quero **dashboard de métricas**                          | **Dado** dados de operação **Quando** acesso o dashboard **Então** vejo TMR, TME, % SLA, reaberturas, volume por categoria/canal, produtividade por agente                               | Alta      | S3     |
-| US-12 | Como **admin**, quero **perfis e permissões**                             | **Dado** papéis (cliente, agente, gestor, admin) **Quando** configuro permissões **Então** cada papel enxerga apenas o que é permitido e ações ficam auditadas                           | Alta      | S3     |
+
+| ID    | História (quem/quer/para)                                      | Aceite (curto)                                                                    | Pri | Sprint |
+|------:|-----------------------------------------------------------------|-----------------------------------------------------------------------------------|:--:|:-----:|
+| US-01 | **Cliente** quer **abrir chamado** para **receber suporte**     | Cria ticket com nº/protocolo, status **Novo** e validações básicas               | 🔥 |  S1   |
+| US-02 | **Cliente** quer **ver/filtrar chamados** para **acompanhar**   | Lista paginada, filtros por status/prioridade e detalhe do ticket                 | 🔥 |  S1   |
+| US-03 | **Agente** quer **login** para **acessar painel**               | Autentica, trata erro de credencial e direciona para painel do agente             | 🔥 |  S1   |
+| US-04 | **Agente** quer **mudar status** para **controlar fluxo**       | Transições: Novo→Em atendimento→Pendente→Resolvido com histórico/auditoria        | 🔥 |  S1   |
+| US-05 | **Agente** quer **comentar/anexar** para **contexto do ticket** | Anexos válidos, comentários na timeline e bloqueio de tipos/tamanhos inválidos    | 🔥 |  S1   |
+| US-06 | **Gestor** quer **configurar SLA** para **garantir prazos**     | Tempos de 1ª resposta e resolução por fila/categoria aplicados a novos tickets    | ⭐ |  S2   |
+| US-07 | **Sistema** quer **alertar SLA** para **evitar violação**       | Marca “em risco” e notifica antes do prazo; registra violações                    | ⭐ |  S2   |
+| US-08 | **Cliente** quer **avaliar (CSAT)** para **medir qualidade**    | Envio de pesquisa no fechamento; guarda nota/comentário                           | ⭐ |  S3   |
+| US-09 | **Agente** quer **sugestão IA** para **priorizar rapidamente**  | Sugere prioridade/categoria; agente pode aceitar/ajustar e registrar decisão      | ✔️ |  S3   |
+| US-10 | **Gestor** quer **dashboard** para **acompanhar operação**      | Exibe TMR, TME, %SLA, reaberturas, volume e produtividade por agente              | 🔥 |  S3   |
+
+**Legenda:** Pri = 🔥 Alta · ⭐ Média · ✔️ Baixa
 
 
-## DoR – Definition of Ready
-- Critérios de aceite definidos  
-- Escopo claro e dependências mapeadas  
-- Design/Modelagem disponíveis (se aplicável)
+
+## ## DoR – Definition of Ready
+
+Uma história está **PRONTA** para entrar na sprint quando atende a todos os itens abaixo:
+
+- [ ] **Critérios de Aceite** escritos em BDD (Dado/Quando/Então) e sem ambiguidades
+- [ ] **Escopo Claro** (fora/escopo explicitado) e **dependências** mapeadas
+- [ ] **Valor de Negócio** e **prioridade** definidos; impacto alinhado ao objetivo da sprint
+- [ ] **Design/Modelagem** disponíveis (telas, fluxos, DER/API) quando aplicável
+- [ ] **Regras de Negócio** e **validações** documentadas (incl. estados/status)
+- [ ] **Dados/Integrações** especificados (campos, contratos de API, mensagens/filas)
+- [ ] **Critérios Não Funcionais** (perf, segurança/LGPD, acessibilidade) acordados
+- [ ] **Testes** planejados (unitários/integração/aceitação) e dados de teste definidos
+- [ ] **Estimativa** feita pela equipe e **risco** conhecido (assunções/mitigações)
+- [ ] **Pronto para Deploy**: estratégia/rollback definidos quando relevante
 
 ## DoD – Definition of Done
-- Código revisado e testado  
-- Documentação atualizada (README/Docs/API)  
-- Homologado e demonstrado
 
-## Cronograma de Sprints
-| Sprint | Período | Entregas/Docs |
-|-------|---------|----------------|
-| S1 | dd/mm – dd/mm | link |
-| S2 | dd/mm – dd/mm | link |
-| S3 | dd/mm – dd/mm | link |
+Uma história está **CONCLUÍDA** quando cumpre **todos** os itens:
+
+- [ ] **Critérios de Aceite** atendidos e aprovados (PO/parte interessada)
+- [ ] **Código revisado** (1+ code review), **CI verde**, lint/format aplicado
+- [ ] **Testes** unitários/integração/contrato passando (cobertura ≥ X%)
+- [ ] **Segurança/LGPD**: sem exposição de dados sensíveis; segredos seguros
+- [ ] **Performance & Acessibilidade** dentro do mínimo acordado
+- [ ] **Logs/Monitoramento** e métricas adicionados (smoke/health check)
+- [ ] **Documentação** atualizada (README, API/OpenAPI, CHANGELOG)
+- [ ] **Migrações de BD** aplicadas e reversíveis (rollback testado)
+- [ ] **Feature flag/fallback** definido (quando aplicável)
+- [ ] **Homologado** em ambiente de testes e **aprovado** pelo negócio
+- [ ] **Deploy** realizado/verificado **ou** pacote pronto para release
+- [ ] **Métrica de sucesso**/tracking implementados (telemetria de uso)
+
+
+## Cronograma de Sprints (resumido)
+
+| Sprint | Período                   | Foco/Entregas (resumo)                                           | Link |
+|:-----:|----------------------------|------------------------------------------------------------------|:----:|
+| S1    | 19/08/2025 – 31/08/2025    | Fundações: GitHub/meta-repo, docs iniciais, diagramas, scaffolds, BD base | [Adicionar link]() |
+| S2    | 01/09/2025 – 13/09/2025    | Fluxo core: login, abrir ticket, listar/filtrar meus chamados   | [Adicionar link]() |
+| S3    | 14/09/2025 – 26/09/2025    | Detalhe do ticket, status/fluxo, anexos, histórico              | [Adicionar link]() |
+| S4    | 27/09/2025 – 09/10/2025    | SLA: configuração, contagem de prazos, alertas; e-mail básico   | [Adicionar link]() |
+| S5    | 10/10/2025 – 22/10/2025    | CSAT, Base de Conhecimento (MVP), webhooks/API; tuning de BD    | [Adicionar link]() |
+| S6    | 23/10/2025 – 04/11/2025    | IA (prioridade/categoria), permissões/perfis, dashboard inicial | [Adicionar link]() |
+| S7    | 05/11/2025 – 15/11/2025    | Hardening, testes/observabilidade, homologação, vídeo/entrega   | [Adicionar link]() |
+
 
 ## Tecnologias
-- Frontend: _(ex: React/Next.js)_  
-- Backend: _(ex: FastAPI/Node)_  
-- Banco: _(ex: Postgres)_  
-- Outros: CI/CD, Docker, etc.
+
+- **Frontend (Web):** React + Next.js  
+  _Opcional:_ Tailwind CSS, Zustand/Redux, Axios/React Query  
+  _Mobile (roadmap):_ React Native  
+  _Desktop (roadmap):_ Electron
+
+- **Backend (API):** Python + FastAPI  
+  _Extras:_ Pydantic, Uvicorn/Gunicorn, SQLAlchemy, Alembic (migrações)  
+  _Docs:_ OpenAPI/Swagger (auto)
+
+- **Banco de Dados:** Microsoft SQL Server  
+  _Suporte:_ Migrations (Alembic), índices/views para métricas
+
+- **Cache & Filas (opcional):** Redis (cache, rate limiting, sessões), RQ/Celery (jobs)  
+  _Alternativa Node:_ BullMQ (se usar Node)
+
+- **Autenticação & Segurança:** JWT (access/refresh), RBAC (perfis), CORS, .env/Secrets
+
+- **Observabilidade:** Logs estruturados, métricas (Prometheus), dashboards (Grafana)
+
+- **Integrações:** SMTP/IMAP (e-mail), Webhooks, API pública (tokens)
+
+- **Qualidade & Testes:** Pytest (unit/integração), Coverage, Lint/Format (ruff/black)
+
+- **DevOps:** Docker + Docker Compose, GitHub Actions (CI/CD), versionamento semântico  
+  _Ambientes:_ Dev / Homolog / Prod
+
+> Links para referências (adicione depois):  
+> - Frontend: [Repo Frontend]()  
+> - Backend: [Repo Backend]()  
+> - Docs/API: [Swagger/OpenAPI]()  
+> - Infra/DevOps: [Pipelines CI/CD]()  
+
 
 ## Manual de Instalação
 - **Frontend:** ver `frontend/README.md`  
 - **Backend:** ver `backend/README.md`  
 
 ## Equipe
-- Nome – papel  
-- Nome – papel
+
+- **André Luis dos Santos Barbosa** — Product Owner / Gestão do Projeto  
+- **Kaique Loamir Siqueira Uchôa** — QA & Documentação / Suporte ao Frontend  
+- **Vinicius de Andrade Fagundes** — Analista de Dados / Observabilidade  
+- **Erika Aparecida Cordeiro** — Tech Lead / Backend
+
+> (Opcional) Adicione links depois: [GitHub]() · [LinkedIn]()
+
